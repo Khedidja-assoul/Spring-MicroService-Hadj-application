@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ms-auth/ms-auth.iml" filepath="$PROJECT_DIR$/ms-auth/ms-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-inscription/ms-inscriptionhadj.iml" filepath="$PROJECT_DIR$/ms-inscription/ms-inscriptionhadj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-new/ms-new.iml" filepath="$PROJECT_DIR$/ms-new/ms-new.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-pelerin/ms-pelerin.iml" filepath="$PROJECT_DIR$/ms-pelerin/ms-pelerin.iml" />
+    </modules>
+  </component>
+</project>

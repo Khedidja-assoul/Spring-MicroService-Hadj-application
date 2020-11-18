@@ -1,0 +1,42 @@
+.backg::after {
+    opacity: 0.2;
+}
+.ptable table{
+    text-align: center;
+}
+.col-sm-7{
+    margin-top: 0px;
+    background:#fff;
+    margin-top: 100px;
+    margin-bottom: 5%;
+    width: 70%;
+    height: 600px;
+    border-radius: 3%;
+    background: rgba(0,123,94,0.74);
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+}
+.form-group{
+    margin-top: 50px;
+}
+.form-control{
+    border-radius:1rem;
+    height: 60px;
+}
+.label{
+    font-size: 22px;
+    height: 22px;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    margin-right:15px;
+    float:left;
+}
+h4{
+    margin-left: 250px;
+    margin-top: 20px;
+}
+.custom-control{
+    margin-left: 250px;
+    margin-top: 30px;
+}

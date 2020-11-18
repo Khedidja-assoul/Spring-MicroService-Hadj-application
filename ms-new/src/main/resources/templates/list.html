@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="alert alert-success">
+    <strong>Spring Boot Thymeleaf Crud</strong> - csdcodes.net
+</div>
+<div class="container">
+    <div style="text-align: right; margin-bottom: 5px;">
+        <a th:href="@{/demo/add}" class="btn btn-success" role="button">+ Add inscrit</a>
+    </div>
+    <table class="table table-bordered" border="1">
+        <thead>
+        <tr>
+            <th>ENUM</th>
+            <th>NOM</th>
+            <th>PRENOM</th>
+            <th>SEXE</th>
+            <th>LIEU DE NAISSANCE</th>
+            <th>DATE DE NAISSANCE</th>
+            <th>NUM DE TELEPHONE</th>
+            <th>EMAIL</th>
+            <th>ADRESSE</th>
+            <th>mahrem</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each=" i : ${inscrits}">
+            <td th:text="${i.enum}"></td>
+            <td th:text="${i.nom}"></td>
+            <td th:text="${i.prenom}"></td>
+            <td th:text="${i.sexe}"></td>
+            <td th:text="${i.lieu}"></td>
+            <td th:text="${i.daten}"></td>
+            <td th:text="${i.num}"></td>
+            <td th:text="${i.email}"></td>
+            <td th:text="${i.adresse.getWilaya()}"></td>
+            <td th:if="${i.sexe}=='femme'" th:text="${i.mahrem.enummahrem}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

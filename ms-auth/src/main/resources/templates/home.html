@@ -1,0 +1,240 @@
+<!DOCTYPE>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hadj</title>
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/Home.css}" >
+    <script th:src="@{../js/scrollspy.js}"></script>
+
+</head>
+<body>
+<header>
+
+
+    <div class="logo"><img th:src="@{/image/v4.png}"></div>
+    <div class="bar" >
+        <p th:each="i :${inscription}" >Les inscriptions seront ouvertes de <span id="d1" th:text="*{i.dated}" ></span> à <span th:text="*{i.datef}"></span></p>
+    </div>
+    <div class="bs-example navg Header" id="myHeader">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link active">Accueil</a>
+                    <a href="home.html" class="nav-item nav-link">Services</a>
+                    <a href="#" class="nav-item nav-link">Réservation</a>
+                    <a href="#" class="nav-item nav-link">Documents</a>
+                    <a th:href="@{/demo/add}" class="nav-item nav-link" th:each="i :${inscription}" th:if="${i.datef.after(#dates.createNow())}">Inscrire</a>
+                </div>
+                <form class="form-inline ml-auto search">
+                    <a sec:authorize="isAnonymous()" th:href="@{/login}" class="nav-item nav-link active">Se connecter </a>
+                    <a sec:authorize="isAuthenticated()"  th:href="@{/compte}" class="nav-item nav-link active">mon Compte </a>
+                    <input type="text" class="form-control mr-sm-2 f" placeholder="Search">
+                    <button type="submit" class="btn btn-outline-light d">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="backg container-fluid">
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img th:src="@{/image/img3.jpg}" alt="img1">
+        </div>
+        <div class="carousel-item">
+            <img th:src="@{/image/img.jpg}" alt="img2">
+        </div>
+        <div class="carousel-item">
+            <img th:src="@{/image/img2.jpg}" alt="img3">
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+    <nav class="navbar col-sm-1">
+    <ul class="navbar-nav nav-pills nav-stacked">
+        <li class="nav-item active">
+            <a class="nav-link scroll" href="#one"><i class="fa fa-angle-double-right"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link scroll" href="#two"><i class="fa fa-angle-double-right"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link scroll" href="#three"><i class="fa fa-angle-double-right"></i></a>
+        </li>
+    </ul>
+    </nav>
+     <div class="col-sm-11">
+    <div class="jumbotron-fluid text-center one" id="one">
+        <span class="display-3">:أركان الحج</span>
+        <div class="row">
+        <div class="card offset-sm-1 col-sm-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">الإحرام</h5>
+                <p class="card-text">وهو نيّة البدء بالحجّ أو العمرة من الميقات المحدّد شرعاً، وقد اختلف العلماء في اعتباره رُكناً من أركان الحجّ، أم شرطاً من شُروطه؛ فذهب جمهور العلماء؛ من المالكيّة، والشافعيّة، والحنابلة؛ إلى أنّ الإحرام ركنٌ من أركان الحجّ، أمّا الحنفيّة؛ فقد عدّوه شرطاً لصحّة الحجّ، وللحاجّ اختيار أيّ نوعٍ من أنواع الإحرام بالحج.؛
+            </div>
+        </div>
+        <div class="card offset-sm-2 col-sm-4 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">الوقوف في عرفة</h5>
+                <p class="card-text">ويكون بتواجد الحاجّ في أي مكانٍ من أرض عرفة، في الوقت المحدّد شَرْعاً للوقوف، سواءً كان وقوف الحاجّ في عرفة قائماً، أو جالساً، أو نائماً، وغير ذلك،
+            </div>
+        </div>
+        <div class="card offset-sm-1 col-sm-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">السعي بين الصفا والمروة</h5>
+                <p class="card-text">ووقته من طلوع فجر يوم عرفة (التاسع من شهر ذي الحجة) إلى طلوع فجر اليوم التالي، وليس لما يسميه العامة "جبل الرحمة" مزية شرعية عن باقي نواحي عرفة.</p>
+            </div>
+        </div>
+        <div class="card offset-sm-2 col-sm-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">طواف الإفاضة</h5>
+                <p class="card-text">يقع بعد طواف الإفاضة أو أي طواف آخر، وللمفرد والقارن أن يقدماه مع طواف القدوم.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="jumbotron-fluid text-center two" id="two">
+        <span class="display-3">Nos services</span>
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" th:src="@{../image/med.jpg}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Consultation médicale</h5>
+                    <p class="card-text">Nous vous proposons un examen médical par nos médecins pour voir si vous êtes apte pour le hajj</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" th:src="@{/image/vol.jpg}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Reservation Vols</h5>
+                    <p class="card-text">Notre site se chargera de la réservation de la compagnie aérienne et vous informera des vols.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" th:src="@{/image/hotel.jpg}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Réservation hotels</h5>
+                    <p class="card-text">Nous nous occupons de la réservation d'hôtel et vous fournissons tout ce dont vous avez besoin.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron-fluid text-center three" id="three">
+        <span class="display-3">A propos de nous</span>
+        <div class="row about">
+            <div class="card col-sm-3">
+                <div class="card-body text-center">
+                    <p><img class=" img-fluid" th:src="@{/image/iconfemme.png}" alt="card image"></p>
+                    <h4 class="card-title">Assoul Khadidja</h4>
+                    <p class="card-text">Back-end developer.</p>
+                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                </div>
+            </div>
+            <div class="card offset-sm-1 col-sm-3">
+                <div class="card-body text-center">
+                    <p><img class=" img-fluid" th:src="@{/image/iconfemme.png}" alt="card image"></p>
+                    <h4 class="card-title">Cherki Amina</h4>
+                    <p class="card-text">Back-end developer.</p>
+                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                </div>
+            </div>
+            <div class="card offset-sm-1 col-sm-3">
+                <div class="card-body text-center">
+                    <p><img class=" img-fluid" th:src="@{/image/iconfemme.png}" alt="card image"></p>
+                    <h4 class="card-title">Larbi Bochra</h4>
+                    <p class="card-text">Front-end developer.</p>
+                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+     </div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<section id="footer">
+    <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="link col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+                </ul>
+            </div>
+            <div class="link col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                </ul>
+            </div>
+            <div class="link col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-link row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                <ul class="list-unstyled list-inline social text-center">
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+    </div>
+</section>
+<!-- ./Footer -->
+
+<script th:src="@{https://code.jquery.com/jquery-3.2.1.slim.min.js}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
+ </body>
+
+</html>

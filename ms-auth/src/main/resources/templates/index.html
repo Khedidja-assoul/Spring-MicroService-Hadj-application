@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+
+<div align="center">
+
+    <div sec:authorize="isAuthenticated()">
+        Welcome <b><span sec:authentication="name">utilisateurs</span></b>
+        &nbsp;
+        <i><span sec:authentication="principal.authorities">Roles</span></i>
+
+        <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout" />
+        </form>
+        <table class="table table-bordered" border="1">
+        <thead>
+        <tr>
+            <th>Utilisateur :</th>
+            <th>mdp :</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each=" i : ${users}">
+             <td th:text="${i.username}"></td>
+            <td th:text="${i.password}"></td>
+        </tr>
+        </tbody>
+
+        </table>
+    </div>
+</div>
+<div sec:authorize="isAnonymous()">
+    <form th:action="@{/login}" method="post">
+    <input type="submit" value="login" />
+    </form>
+</div>
+
+
+</html>
+
+

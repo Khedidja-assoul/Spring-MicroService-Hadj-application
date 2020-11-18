@@ -1,0 +1,325 @@
+<!DOCTYPE html >
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+                  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" th:href='@{/css/Home.css}' >
+    <link type="text/css" rel="stylesheet" th:href='@{/css/inscrire.css}'  >
+    <title>Sign up homme</title>
+</head>
+
+<body>
+<header>
+    <div class="bar"><p>Les inscriptions seront ouvertes le 20/04/2021</p></div>
+    <div class="bs-example navg Header" id="myHeader">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link active">Home</a>
+                    <a href="#" class="nav-item nav-link">About</a>
+                    <a href="#" class="nav-item nav-link">services</a>
+                </div>
+                <form class="form-inline ml-auto search">
+                    <input type="text" class="form-control mr-sm-2 f" placeholder="Search">
+                    <button type="submit" class="btn btn-outline-light d">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="backg">
+    <div class="img cont">
+      <!--  <img src="@{../static/image/hajj2.jpg}">-->
+    </div>
+
+        <form th:action="@{/demo/addEdit}" method="post" th:object="${inscrits}">
+            <div id="container" class="cont">
+                <span class="input">
+                    <input type="number" class="input__field" id="input-0" th:field="*{enum}" />
+                    <label for="input-0" class="input__label">
+                        <span class="input__label-content">ENUM </span>
+                    </label>
+                </span>
+
+                <span class="input">
+                    <input type="text" class="input__field" id="input-1" th:field="*{nom}"  />
+                    <label for="input-1" class="input__label">
+                        <span class="input__label-content">NOM</span>
+                    </label>
+                </span>
+                <span class="input">
+                     <input type="text" class="input__field" id="input-2" th:field="*{prenom}"   />
+                    <label for="input-2" class="input__label">
+                        <span class="input__label-content">Prenom</span>
+                    </label>
+                </span>
+                <span class="input">
+                    <input type="date" class="input__field" id="input-3" th:field="*{daten}"/>
+                    <label for="input-3" class="input__label">
+                        <span class="input__label-date input__label-content">Date naissance</span>
+                    </label>
+                </span>
+                <span class="input">
+                    <input type="text" class="input__field" id="input-4" th:field="*{lieu}" />
+                    <label for="input-4" class="input__label">
+                        <span class="input__label-content">lieu de naissance</span>
+                    </label>
+                </span>
+
+                <span class="input">
+                    <input type="email" class="input__field" id="input-8" th:field="*{email}" />
+                    <label for="input-8" class="input__label">
+                        <span class="input__label-content">Adresse email</span>
+                    </label>
+                </span>
+                <span class="input">
+                    <input type="number" class="input__field" id="input-9" th:field="*{num}" />
+                    <label for="input-9" class="input__label">
+                        <span class="input__label-content">Phone Number</span>
+                    </label>
+                </span>
+                <span class="input" th:object="${adresse}">
+                    <span class="input " >
+                        <label class="label1" >Wilaya</label>
+                        <select id="s1">
+                            <option th:field="*{wilaya}" value="wilaya" >Sidi bel abbes</option>
+                        </select>
+                    </span>
+                    <span class="input ">
+                        <label class="labelO">
+                            Commune
+                        </label>
+                        <select id="s2">
+                            <option th:field="*{commune}" value="commune">Sidi bel abbes</option>
+                            <option th:field="*{commune}" value="commune">Sidi brahim</option>
+                            <option th:field="*{commune}" value="commune">Sidi bel abbes</option>
+                        </select>
+                    </span>
+
+                </span>
+
+
+
+                <div  class="radio">
+                    <h3>Sexe</h3>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" name="radiog_dark" id="radio4" class="css-checkbox" value="homme" checked="checked" th:field="*{sexe}" />
+                                <label for="radio4" class="css-label radGroup2">Homme</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="radiog_dark" id="radio5" class="css-checkbox"  value="femme" th:field="*{sexe}" />
+                                <label for="radio5" class="css-label radGroup2">Femme</label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn1">
+                    <button id="send-button" type="submit">Send</button>
+                </div>
+            </div>
+
+            <div id="container2" class="cont"   th:object="${mahrem}">
+                <h2>Mehrem</h2>
+
+                <span class="input">
+
+                    <input type="text" class="input__field" id="input-10" th:field="*{enummahrem}" />
+                    <label for="input-10" class="input__label">
+                        <span class="input__label-content">ENUM </span>
+                    </label>
+                </span>
+
+                <span class="input">
+                    <input type="text" class="input__field" id="input-11"  th:field="*{nommahrem}"/>
+                    <label for="input-11" class="input__label">
+                        <span class="input__label-content">Nom </span>
+                    </label>
+                </span>
+
+                <span class="input">
+                    <input type="text" class="input__field" id="input-12" th:field="*{prenommahrem}"/>
+                    <label for="input-12" class="input__label">
+                        <span class="input__label-content">Prénom</span>
+                    </label>
+                </span>
+
+              <!--  <span class="input">
+
+                    <input type="date" class="input__field" id="input-13" th:field="*{datenmahrem}"  />
+                    <label for="input-13" class="input__label">
+                        <span class="input__label-date input__label-content">Date naissance</span>
+                    </label>
+                </span>-->
+
+                <span class="input">
+                    <input type="text" class="input__field" id="input-14" th:field="*{lieumahrem}" />
+                    <label for="input-14" class="input__label">
+                        <span class="input__label-content">lieu de naissance</span>
+                    </label>
+                </span>
+
+                <span class="input">
+                    <input type="text" class="input__field" id="input-18" th:field="*{emailmahrem}"/>
+                    <label for="input-18" class="input__label">
+                        <span class="input__label-content">  adresse email</span>
+                    </label>
+                </span>
+
+                <span class="input">
+                    <input type="text" class="input__field" id="input-19" th:field="*{nummahrem}"/>
+                    <label for="input-19" class="input__label">
+                        <span class="input__label-content">num </span>
+                    </label>
+                </span>
+
+                <span class="input ">
+                    <label class="label1">
+                        Wilaya
+                    </label>
+                    <select id="s3">
+                        <option>Sidi bel abbes</option>
+                    </select>
+                </span>
+                <span class="input ">
+                    <label class="labelO">
+                        Commune
+                    </label>
+                    <select id="s4">
+                        <option>Sidi bel abbes</option>
+                        <option>Sidi brahim</option>
+                        <option>Sidi lahcen</option>
+                    </select>
+                </span>
+            </div>
+        </form>
+</div>
+<!-- Footer -->
+<section id="footer">
+    <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="link col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+                </ul>
+            </div>
+            <div class="link col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                </ul>
+            </div>
+            <div class="link col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-link row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                <ul class="list-unstyled list-inline social text-center">
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                <p class="h6">© All right Reversed.<a class="text-green ml-2" href="" target="_blank">Hajj Site</a></p>
+            </div>
+            <hr>
+        </div>
+    </div>
+</section>
+<!-- ./Footer -->
+<script th:src="@{https://code.jquery.com/jquery-3.2.1.slim.min.js}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script th:src="@{js/Home.js}"></script>
+<script th:src="@{/js/signup.js}"></script>
+<!--
+<script >
+    var $input;
+
+    function onInputFocus(event) {
+        var $target = $(event.target);
+        var $parent = $target.parent();
+        $parent.addClass('input--filled');
+    };
+
+    function onInputBlur(event) {
+        var $target = $(event.target);
+        var $parent = $target.parent();
+
+        if (event.target.value.trim() === '') {
+            $parent.removeClass('input--filled');
+        }
+    };
+
+    $(document).ready(function() {
+        $input = $('.input__field');
+
+        // in case there is any value already
+        $input.each(function(){
+            if ($input.val().trim() !== '') {
+                var $parent = $input.parent();
+                $parent.addClass('input--filled');
+            }
+        });
+
+        $input.on('focus', onInputFocus);
+        $input.on('blur', onInputBlur);
+    });
+</script>-->
+
+<script>
+    $(document).ready(function () {
+        $('#container2').hide();
+        $('#container').css("margin-left", "700px");
+        $('input[type=radio][name=radiog_dark]').change(function () {
+            if (this.value === 'femme') {
+                $('#container2').show();
+                $('#container').css("margin-left", "450px");
+
+            } else if (this.value === 'homme') {
+                $('#container2').hide();
+                $('#container').css("margin-left", "700px");
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

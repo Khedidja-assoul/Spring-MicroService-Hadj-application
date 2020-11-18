@@ -1,0 +1,34 @@
+.backg {
+    width: 100%;
+    height:1200px;
+    display: block;
+}
+
+.backg::after {
+    height:1200px;
+    content: "";
+    background: url('../image/hajj2.jpg') repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    margin-top: -60px;
+
+}
+.titre{
+    margin-top: 80px;
+    margin-left: 550px;
+    font-weight: bold;
+    color: #03771A;
+}
+.table{
+    width: 80%;
+    margin-top: 40px;
+    margin-left: 150px;
+}
+#footer{
+    margin-top:-200px ;
+}

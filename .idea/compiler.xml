@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ms-inscriptionhadj" />
+        <module name="ms-auth" />
+        <module name="ms-new" />
+        <module name="ms-pelerin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-gateway" target="1.8" />
+      <module name="ms-auth" target="1.8" />
+      <module name="ms-authentification" target="1.8" />
+      <module name="ms-hadj" target="1.8" />
+      <module name="ms-inscription" target="1.8" />
+      <module name="ms-inscriptionhadj" target="1.8" />
+      <module name="ms-new" target="1.8" />
+      <module name="ms-pelerin" target="1.8" />
+      <module name="ms-registry" target="1.8" />
+      <module name="ms-test" target="1.8" />
+      <module name="web-client" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloud-gateway" options="-parameters" />
+      <module name="ms-auth" options="-parameters" />
+      <module name="ms-authentification" options="-parameters" />
+      <module name="ms-hadj" options="-parameters" />
+      <module name="ms-inscription" options="-parameters" />
+      <module name="ms-inscriptionhadj" options="-parameters" />
+      <module name="ms-new" options="-parameters" />
+      <module name="ms-pelerin" options="-parameters" />
+      <module name="ms-registry" options="-parameters" />
+      <module name="ms-test" options="-parameters" />
+      <module name="web-client" options="-parameters" />
+    </option>
+  </component>
+</project>

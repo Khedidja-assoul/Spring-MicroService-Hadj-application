@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Pélerin page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/admin.css}">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/pelerin.css}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
+</head>
+<body>
+<header>
+    <div class="logo"><img th:src="@{/image/v4.png}"></div>
+</header>
+<div class="backg container-fluid">
+    <nav class="navbar container-fluid">
+        <a class="navbar-brand" href="#">
+            <img class="rounded-circle" th:src="@{/image/icon.png}" width="90" height="70" alt="">
+            <span class="navbar-text" sec:authentication="name">  </span>
+        </a>
+        <span class="navbar-text"><i class="fa fa-map-marker"></i>Address</span>
+        <span class="navbar-text"><i class="fa fa-envelope"></i>Email</span>
+        <span class="navbar-text"><i class="fa fa-phone"></i>Phone number</span>
+        <span class="navbar-text"><a th:href="@{/logout}"><i class="fa fa-sign-out"></i></a>Logout</span>
+
+
+    </nav>
+    <div class="cards">
+        <div class="row">
+            <div class="offset-md-1 col-md-4 col-sm-6 item">
+                <div class="card item-card card-block">
+                    <img id="imgfolder" th:src="@{/image/folder.png}">
+                    <h2 class="item-card-title mt-3 mb-3">Remplir le dossier</h2>
+                    <p class="card-text">Gestion de dossier médicale et documents.</p>
+                    <a href="openInscription.html" class="btn btn-primary stretched-link lien">Aller</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="card item-card card-block">
+                    <img id="imgflight" th:src="@{/image/flight.png}">
+                    <h2 class="item-card-title mt-3 mb-3">Réserver vol</h2>
+                    <p class="card-text">Gestion de réservation vol</p>
+                    <a href="#" class="btn btn-primary stretched-link lien">Aller</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-1 col-md-4 col-sm-6 item">
+                <div class="card item-card card-block">
+                    <img id="imgedit" th:src="@{/image/edit.png}">
+                    <h2 class="item-card-title mt-3 mb-3">Editer profile</h2>
+                    <p class="card-text">Gestion profiles pelerin</p>
+                    <a href="#" class="btn btn-primary stretched-link lien">Editer</a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="card item-card card-block">
+                    <img id="imgtirage" th:src="@{/image/hotel.png}" width="10px" height="100px">
+                    <h2 class="item-card-title mt-3 mb-3">Réserver hotel</h2>
+                    <p class="card-text">Gestion de réservation hotel.</p>
+                    <a href="#" class="btn btn-primary stretched-link lien">Aller</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<section id="footer">
+    <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="link col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+                </ul>
+            </div>
+            <div class="link col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                </ul>
+            </div>
+            <div class="link col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-link row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                <ul class="list-unstyled list-inline social text-center">
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+    </div>
+</section>
+<!-- ./Footer -->
+<script th:src="@{https://code.jquery.com/jquery-3.2.1.slim.min.js}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
